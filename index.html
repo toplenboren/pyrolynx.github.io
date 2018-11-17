@@ -1,0 +1,23 @@
+<html>
+    <title>Is it up?</title>
+    <body>
+        <script>
+            window.setTimeout(() => {
+                var xhttp = new XMLHttpRequest();
+                xhttp.open('GET', 'http://tasks.miemctf.ru:37943', false);
+
+                // 3. Отсылаем запрос
+                xhttp.send();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.body.style.backgroundColor = "#11FF11";
+                }
+                xhttp.onerror = function () {
+                    document.body.style.backgroundColor = "#FF1111";
+                }
+};
+xhttp.open("GET", "filename", true);
+xhttp.send();
+            }, 1000)
+    </body>
+</html>
